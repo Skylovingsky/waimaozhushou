@@ -1,0 +1,53 @@
+// src/db/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"        // 如果你在阿里云用 MySQL，这里改成 "mysql"
+  url      = env("DATABASE_URL") // 从 .env 读取
+}
+
+model Company {
+  id             String   @id @default(uuid())
+  name           String
+  country        String?
+  industry       String?
+  summary        String
+  overallScore   Int
+  recommendation String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  evidencePages     EvidencePage[]
+  outreachMessages  OutreachMessage[]
+  thirdPartyMessages ThirdPartyMessage[]
+}
+
+model EvidencePage {
+  id        String   @id @default(uuid())
+  url       String
+  snippet   String
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id])
+}
+
+model OutreachMessage {
+  id        String   @id @default(uuid())
+  channel   String
+  language  String
+  content   String
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id])
+}
+
+model ThirdPartyMessage {
+  id        String   @id @default(uuid())
+  channel   String
+  direction String
+  content   String
+  metadata  Json?
+  timestamp DateTime @default(now())
+  companyId String
+  company   Company  @relation(fields: [companyId], references: [id])
+}

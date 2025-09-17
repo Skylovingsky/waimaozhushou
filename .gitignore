@@ -1,0 +1,26 @@
+# Node / monorepo
+node_modules/
+dist/
+build/
+coverage/
+.turbo/
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# Env & local
+.env
+*.env
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Prisma
+prisma/*.db
+prisma/*.sqlite
+**/*.sqlite
+**/*.db
+
+

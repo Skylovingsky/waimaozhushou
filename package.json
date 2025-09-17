@@ -1,0 +1,22 @@
+{
+    "name": "foreign-trade-assistant",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+      "dev:agent": "pnpm --filter agent-service dev",
+      "dev:web": "pnpm --filter web dev",
+      "build": "pnpm -r build",
+      "lint": "eslint . --ext .ts,.tsx",
+      "format": "prettier --write ."
+    },
+    "devDependencies": {
+      "typescript": "^5.4.0",
+      "eslint": "^9.0.0",
+      "prettier": "^3.2.0"
+    },
+    "workspaces": [
+      "apps/*",
+      "packages/*"
+    ]
+  }
+  
