@@ -4,7 +4,7 @@
  * 外联话术相关逻辑
  */
 import { prisma } from "../db/prisma";
-import { OutreachMessage } from "@foreign-trade-assistant/dto";
+import { OutreachMessage } from "@foreign-trade-assistant/dto/src/outreach";
 
 export class OutreachService {
   /**

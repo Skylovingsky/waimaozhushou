@@ -1,13 +1,22 @@
 {
     "files": [],
     "references": [
-      { "path": "apps/agent-service" },
-      { "path": "apps/web" },
-      { "path": "packages/dto" }
+      { "path": "./apps/agent-service" },
+      { "path": "./apps/web" },
+      { "path": "./packages/dto" }
     ],
     "compilerOptions": {
       "composite": true,
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "jsx": "preserve",
+          "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@foreign-trade-assistant/dto": ["packages/dto/src"]
+    }
     }
   }
   

@@ -7,7 +7,7 @@
  */
 import { prisma } from "../db/prisma";
 import { CompanyAgent } from "../agents/CompanyAgent";
-import { CompanyProfile } from "@foreign-trade-assistant/dto";
+import { CompanyProfile } from "@foreign-trade-assistant/dto/src/company";
 import { randomUUID } from "node:crypto";
 
 export class CompanyService {

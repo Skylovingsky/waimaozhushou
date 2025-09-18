@@ -7,8 +7,7 @@
  */
 
 import { callQwen } from "../utils/aiClient";
-import { CompanyProfile } from "@foreign-trade-assistant/dto";
-import { OutreachMessage } from "@foreign-trade-assistant/dto";
+import { CompanyProfile, OutreachMessage } from "@foreign-trade-assistant/dto/src";
 
 export class CompanyAgent {
   /**

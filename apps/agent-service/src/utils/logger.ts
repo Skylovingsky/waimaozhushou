@@ -5,7 +5,7 @@
  * - 封装 console
  * - 按级别打印
  */
-import pino from "pino";
+import * as pino from "pino";
 import { config } from "../config/env";
 
 export const logger = pino({
